@@ -109,7 +109,7 @@ function renderHistory(){
   $('historyTable').innerHTML=arr.length?`<div style="overflow:auto"><table class="table"><thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Journée</th><th>Montant</th></tr></thead><tbody>${arr.map(x=>`<tr><td>${fmtDate(x.date)}</td><td><span class="badge ${x.kind}">${x.kind==='income'?'VERSEMENT':'DÉPENSE'}</span></td><td>${x.title}<br><small style="color:#9aa2ae">${x.detail}</small></td><td>${x.kind==='income'?(x.status==='not_worked'?'Non travaillée':x.type==='half'?'Demi-journée':'Complète'):'—'}</td><td class="${x.kind==='expense'?'negative':'positive'}"><b>${x.kind==='expense'?'−':'+'}${money(x.amount)}</b></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Aucune opération correspondant aux filtres.</div>';
 }
 
-function refresh(){updateStats();renderRecent();renderWeek();renderChart();renderHistory();}
+function refresh(){updateStats();renderRecent();renderWeek();renderHistory();}
 
 function toast(msg){
   const t=$('toast');t.textContent=msg;t.classList.add('show');
@@ -184,7 +184,6 @@ $('expenseForm').addEventListener('submit',async e=>{
   }catch(err){console.error(err);toast('Firebase refuse l’écriture : vérifiez les règles.');}
 });
 
-$('chartPeriod').addEventListener('change',renderChart);
 $('historyType').addEventListener('change',renderHistory);
 $('historyPeriod').addEventListener('change',renderHistory);
 

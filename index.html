@@ -10,7 +10,7 @@
 <body>
   <div class="app">
     <aside class="sidebar">
-      <div class="brand"><div class="brand-icon">₣</div><div><strong>Ma Caisse</strong><span>Gestion quotidienne</span></div></div>
+    <div class="brand"><div class="brand-icon">LG</div><div><strong>Ma Caisse</strong><span>LUTILA GLOBAL</span></div></div>
       <nav>
         <button class="nav-link active" data-page="dashboard">⌂ <span>Tableau de bord</span></button>
         <button class="nav-link" data-page="versements">＋ <span>Versements</span></button>
@@ -28,25 +28,28 @@
     </nav>
 
     <main class="main">
-      <header class="topbar">
-        <div><h1 id="pageTitle">Tableau de bord</h1><p id="pageSubtitle">Vue générale de votre activité financière</p></div>
-        <div class="date-pill" id="todayLabel"></div>
-      </header>
+  <header class="topbar">
+  <div class="topbar-logo">
+    <img src="lutila globala 1.png" alt="Logo Lutila Global">
+  </div>
+
+  <div class="topbar-content">
+    <h1 id="pageTitle">Tableau de bord</h1>
+    <p id="pageSubtitle">Vue générale de votre activité financière</p>
+  </div>
+
+  <div class="date-pill" id="todayLabel"></div>
+</header>
 
       <section id="dashboard" class="page active">
-        <div class="mobile-quick-actions">
-          <button class="quick-income" data-page="versements"><b>＋</b><span>Ajouter un versement</span></button>
-          <button class="quick-expense" data-page="depenses"><b>−</b><span>Ajouter une dépense</span></button>
-        </div>
-        <div class="stats-grid">
-          <div class="stat-card balance"><div class="stat-icon">₣</div><div><span>Solde disponible</span><strong id="balance">0 $</strong></div></div>
+<div class="stats-grid">
+          <div class="stat-card balance"><div class="stat-icon">$</div><div><span>Solde disponible</span><strong id="balance">0 $</strong></div></div>
           <div class="stat-card"><div class="stat-icon">↗</div><div><span>Total des versements</span><strong id="income">0 $</strong></div></div>
           <div class="stat-card"><div class="stat-icon expense-icon">↘</div><div><span>Total des dépenses</span><strong id="expenses">0 $</strong></div></div>
           <div class="stat-card"><div class="stat-icon">✓</div><div><span>Jours travaillés</span><strong id="workedDays">0</strong></div></div>
         </div>
         <div class="content-grid">
-          <div class="panel chart-panel"><div class="panel-head"><div><h2>Évolution de la caisse</h2><p>Versements et dépenses des derniers jours</p></div><select id="chartPeriod"><option value="7">7 jours</option><option value="14">14 jours</option><option value="30">30 jours</option></select></div><canvas id="cashChart"></canvas></div>
-          <div class="panel"><div class="panel-head"><div><h2>Cette semaine</h2><p>Résumé des journées</p></div></div><div id="weekSummary" class="week-list"></div></div>
+<div class="panel"><div class="panel-head"><div><h2>Cette semaine</h2><p>Résumé des journées</p></div></div><div id="weekSummary" class="week-list"></div></div>
         </div>
         <div class="panel"><div class="panel-head"><div><h2>Dernières opérations</h2><p>Les mouvements les plus récents</p></div><button class="text-btn" data-page="historique">Voir tout →</button></div><div id="recentOperations"></div></div>
       </section>
