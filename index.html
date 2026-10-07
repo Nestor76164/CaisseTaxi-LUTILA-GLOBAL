@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Gestion Caisse</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -20,6 +20,13 @@
       <div class="sidebar-bottom"><div class="mini-card"><span>Solde actuel</span><strong id="sideBalance">0 $</strong></div></div>
     </aside>
 
+    <nav class="mobile-nav" aria-label="Navigation mobile">
+      <button class="mobile-nav-link active" data-page="dashboard"><span>⌂</span><small>Accueil</small></button>
+      <button class="mobile-nav-link" data-page="versements"><span>＋</span><small>Versements</small></button>
+      <button class="mobile-nav-link" data-page="depenses"><span>−</span><small>Dépenses</small></button>
+      <button class="mobile-nav-link" data-page="historique"><span>☷</span><small>Historique</small></button>
+    </nav>
+
     <main class="main">
       <header class="topbar">
         <div><h1 id="pageTitle">Tableau de bord</h1><p id="pageSubtitle">Vue générale de votre activité financière</p></div>
@@ -27,6 +34,10 @@
       </header>
 
       <section id="dashboard" class="page active">
+        <div class="mobile-quick-actions">
+          <button class="quick-income" data-page="versements"><b>＋</b><span>Ajouter un versement</span></button>
+          <button class="quick-expense" data-page="depenses"><b>−</b><span>Ajouter une dépense</span></button>
+        </div>
         <div class="stats-grid">
           <div class="stat-card balance"><div class="stat-icon">₣</div><div><span>Solde disponible</span><strong id="balance">0 $</strong></div></div>
           <div class="stat-card"><div class="stat-icon">↗</div><div><span>Total des versements</span><strong id="income">0 $</strong></div></div>

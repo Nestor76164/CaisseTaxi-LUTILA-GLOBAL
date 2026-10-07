@@ -118,7 +118,7 @@ function toast(msg){
 
 function showPage(page){
   document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===page));
-  document.querySelectorAll('.nav-link').forEach(x=>x.classList.toggle('active',x.dataset.page===page));
+  document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(x=>x.classList.toggle('active',x.dataset.page===page));
   const titles={
     dashboard:['Tableau de bord','Vue générale de votre activité financière'],
     versements:['Versements','Enregistrez les journées et les montants reçus'],
@@ -132,7 +132,12 @@ function showPage(page){
 
 // Navigation : elle fonctionne même si Firebase rencontre un problème.
 document.querySelectorAll('[data-page]').forEach(b=>{
-  b.addEventListener('click',()=>showPage(b.dataset.page));
+  b.addEventListener('click',()=>{
+    showPage(b.dataset.page);
+    document.querySelectorAll('.mobile-nav-link').forEach(x=>{
+      x.classList.toggle('active', x.dataset.page===b.dataset.page);
+    });
+  });
 });
 
 $('incomeDate').value=iso(today);
